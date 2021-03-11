@@ -1,0 +1,3 @@
+﻿  prog.c
+C:\Users\user\Documents\SZ77-C1\week 16\stefanHW_16Q2\prog.c(23,1): warning C4295: 'you': array is too small to include a terminating null character
+  stefanHW_16Q2.vcxproj -> C:\Users\user\Documents\SZ77-C1\week 16\stefanHW_16Q2\Debug\stefanHW_16Q2.exe
