@@ -1,67 +1,54 @@
 /*********************************
-* Class: MAGSHIMIM C1			 *
-* Week 2           				 *
+* Class: MAGSHIMIM C2			 *
+* Week 1           				 *
 **********************************/
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-/*
-The program gets two numbers and a choice of a math operation and performs it (if possible)
-Input: None
-Output: The program returns 0 upon successful completion of its running
-*/
+#define SIZE 5
+
+void printArray(int arr[], int size);
+
 int main(void)
 {
-	// variables definition
-	int num1 = 0, num2 =0,* pNum1 = &num1,* pNum2 = &num2;
-	unsigned int choice = 0;
-	int* pChoice = &choice;
-	
-	//getting numbers from user
-	printf("please enter the first number (a): ");
-	scanf("%d", pNum1);
-	printf("please enter the second number (b): ");
-	scanf("%d", pNum2);
+	int arr[] = { 12, 11, 13, 5, 6 };
+	int i = 0, j = 0, minIndex = 0, tmp = 0;
 
-	//printing menu
-	printf("\nWelcome to the Magashimim Calculator!");
-	printf("\nPlease choose the math operation:");
-	printf("\n1.	adding a+b");
-	printf("\n2.	subtracting a-b");
-	printf("\n3.	multiplying a*b");
-	printf("\n4.	dividing a/b");
+	printf("Before sorting the array:\n");
+	printArray(arr, SIZE);
 
-	//getting choice from user
-	printf("\nYour choice:");
-	scanf("%d", pChoice);
-
-	printf("\n\n");
-	
-	//acting according to choice
-	switch (choice)
+	for (i = 0; i < SIZE - 1; i++)
 	{
-		case 1: //adding
-			printf("%d + %d = %d\n", *pNum1, *pNum2, *pNum1 + *pNum2);
-			break;
-		case 2: //subtracting
-			printf("%d - %d = %d\n", *pNum1, *pNum2, *pNum1 - *pNum2);
-			break;
-		case 3: //multiplying
-			printf("%d * %d = %d\n", *pNum1, *pNum2, *pNum1**pNum2);
-			break;
-		case 4: //dividing
-			if (*pNum2 == 0) //check for division by zero
+		// Find the minimum element in the remaining unsorted array 
+		minIndex = i;
+		for (j = i + 1; j < SIZE; j++)
+		{
+			if (arr[j] < arr[minIndex])
 			{
-				printf("can't divide by zero!!!\n");
+				minIndex = j;
 			}
-			else
-			{
-				printf("%d / %d = %.2f", *pNum1, *pNum2, (float)*pNum1 / *pNum2); //casting, because we will get fructions
-			}
-			break;
-		default: //if the user didn't choose between 1-4
-			printf("choice is not valid\n");
+		}
+		// Swap the found minimum element with the first element 
+		tmp = arr[minIndex];
+		arr[minIndex] = arr[i];
+		arr[i] = tmp;
 	}
+
+	printf("After sorting the array:\n");
+	printArray(arr, SIZE);
+	getchar();
 	return 0;
-} 
+}
+/*
+* Function to print an array
+*/
+void printArray(int arr[], int size)
+{
+	int i = 0;
+	for (i = 0; i < size; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
