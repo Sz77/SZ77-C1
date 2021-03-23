@@ -1,0 +1,4 @@
+﻿  prog.c
+C:\Users\user\Documents\SZ77-C1\week 17\stefan_HW17_Q7\prog.c(42,17): warning C4133: 'function': incompatible types - from 'int *' to 'float *'
+C:\Users\user\Documents\SZ77-C1\week 17\stefan_HW17_Q7\prog.c(42,30): warning C4133: 'function': incompatible types - from 'int *' to 'float *'
+  stefan_HW17_Q7.vcxproj -> C:\Users\user\Documents\SZ77-C1\week 17\stefan_HW17_Q3\Debug\stefan_HW17_Q7.exe
